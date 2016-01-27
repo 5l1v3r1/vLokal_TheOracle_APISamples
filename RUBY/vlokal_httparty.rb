@@ -38,7 +38,7 @@ end
 
 #Sample API Call
 def new_order(order)
-   url ="http://delivery.vlokal.com/api/orders/"
+   url ="https://delivery.vlokal.com/api/orders/"
    response = HTTParty.post(url, 
       cookies: { "csrftoken" => $csrf_token, "sessionid" => $session_id },
       body: order, 
