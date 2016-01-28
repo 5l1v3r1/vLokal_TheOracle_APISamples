@@ -32,8 +32,8 @@ end
 #Get SESSIONID
 $session_id = get_session_id(url)
 
-def api_headers()
-   return { "User-Agent" => $user_agent, "Content-type" => "application/json", "X-CSRFToken" => $csrf_token }
+def api_headers(url)
+   return { "User-Agent" => $user_agent, "Content-type" => "application/json", "X-CSRFToken" => $csrf_token, "Referer" => url }
 end
 
 #Sample API Call
@@ -42,7 +42,7 @@ def new_order(order)
    response = HTTParty.post(url, 
       cookies: { "csrftoken" => $csrf_token, "sessionid" => $session_id },
       body: order, 
-      headers: api_headers())
+      headers: api_headers(url))
    return response.body
 end
 
