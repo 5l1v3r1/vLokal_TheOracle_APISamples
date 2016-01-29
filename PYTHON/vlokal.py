@@ -44,9 +44,12 @@ def get_session_id(url):
 # Get Session ID
 session_id = get_session_id(url)
 
+#Sample API Calls
+
 def new_order(order):
    global csrf_token
    global session_id
+   global user_agent
    url = "https://delivery.vlokal.com/api/orders/"
    request = urllib2.Request(url,order)
    request.add_header('User-Agent', user_agent)
