@@ -89,7 +89,7 @@ function NewOrder($order)
 	$curl_handle = curl_init();
 	$options = array
 	(
-	    CURLOPT_URL=>'http://delivery.vlokal.com/api/orders/',
+	    CURLOPT_URL=>'https://delivery.vlokal.com/api/orders/',
 	    CURLOPT_HEADER=>true,
 	    CURLOPT_RETURNTRANSFER=>true,
 	    CURLOPT_FOLLOWLOCATION=>true,
